@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RK Sportswear — Custom Sports Apparel Manufacturer, Bengaluru</title>
+<meta name="description" content="Custom jerseys, uniforms and team kits manufactured in-house in Bengaluru. Cut, stitch, sublimate, ship.">
+<meta property="og:title" content="RK Sportswear — Custom Sports Apparel, Bengaluru">
+<meta property="og:description" content="In-house manufacturing of custom jerseys, uniforms and team kits for schools, academies and clubs across South India.">
+<meta property="og:type" content="website">
+<style>
+  :root{
+    --ink:#12151A;
+    --ink-soft:#1B2027;
+    --paper:#F4F3EF;
+    --paper-dim:#DCDAD3;
+    --teal:#2FB7C9;
+    --teal-deep:#1C7C88;
+    --line: rgba(244,243,239,0.12);
+    --space-xs:4px; --space-sm:8px; --space-md:16px; --space-lg:24px; --space-xl:40px; --space-2xl:64px;
+    --font: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    font-family:var(--font);
+    background:var(--ink);
+    color:var(--paper);
+    line-height:1.6;
+  }
+  img{max-width:100%; display:block;}
+  a{color:inherit; text-decoration:none;}
+  .wrap{max-width:1120px; margin:0 auto; padding:0 var(--space-lg);}
+
+  /* Header */
+  header{
+    position:sticky; top:0; z-index:50;
+    background:rgba(18,21,26,0.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  header .wrap{display:flex; align-items:center; justify-content:space-between; height:72px;}
+  .brand{display:flex; align-items:center; gap:10px;}
+  .brand img{height:28px; width:auto;}
+  .brand span{font-weight:700; letter-spacing:0.04em; font-size:15px;}
+  nav{display:flex; gap:var(--space-lg); font-size:14px;}
+  nav a{color:var(--paper-dim); transition:color .15s;}
+  nav a:hover{color:var(--teal);}
+  .btn-call{
+    background:var(--teal); color:var(--ink); font-weight:700;
+    padding:10px 18px; border-radius:4px; font-size:14px;
+  }
+  .nav-mobile{display:none;}
+
+  /* Hero */
+  .hero{padding:var(--space-2xl) 0; border-bottom:1px solid var(--line);}
+  .hero .wrap{display:grid; grid-template-columns:1.1fr 0.9fr; gap:var(--space-2xl); align-items:center;}
+  .eyebrow{
+    font-size:12px; letter-spacing:0.12em; color:var(--teal); font-weight:700;
+    text-transform:uppercase; margin-bottom:var(--space-md);
+  }
+  h1{font-size:44px; line-height:1.12; font-weight:800; margin-bottom:var(--space-md); letter-spacing:-0.01em;}
+  .hero p.lede{font-size:17px; color:var(--paper-dim); max-width:46ch; margin-bottom:var(--space-lg);}
+  .cta-row{display:flex; gap:var(--space-md); flex-wrap:wrap;}
+  .btn-primary{
+    background:var(--teal); color:var(--ink); font-weight:700; font-size:15px;
+    padding:14px 26px; border-radius:4px; display:inline-block;
+  }
+  .btn-secondary{
+    border:1px solid var(--line); color:var(--paper); font-weight:600; font-size:15px;
+    padding:14px 26px; border-radius:4px; display:inline-block;
+  }
+  .hero-image{border-radius:6px; overflow:hidden; border:1px solid var(--line);}
+  .hero-image img{width:100%; height:100%; object-fit:cover;}
+
+  .stat-row{
+    border-top:1px solid var(--line); margin-top:var(--space-2xl); padding-top:var(--space-lg);
+    display:grid; grid-template-columns:repeat(3,1fr); gap:var(--space-lg);
+  }
+  .stat-row .n{font-size:28px; font-weight:800; color:var(--teal);}
+  .stat-row .l{font-size:13px; color:var(--paper-dim); margin-top:2px;}
+
+  /* Section shared */
+  section{padding:var(--space-2xl) 0;}
+  section.alt{background:var(--ink-soft);}
+  .section-head{margin-bottom:var(--space-xl); max-width:60ch;}
+  .section-head .eyebrow{margin-bottom:var(--space-sm);}
+  h2{font-size:30px; font-weight:800; letter-spacing:-0.01em;}
+  h2 + p{color:var(--paper-dim); margin-top:var(--space-sm); font-size:15.5px;}
+
+  /* Product gallery */
+  .gallery{
+    display:grid; grid-template-columns:repeat(4,1fr); gap:var(--space-md);
+  }
+  .gallery figure{
+    border:1px solid var(--line); border-radius:4px; overflow:hidden; background:var(--ink);
+  }
+  .gallery img{aspect-ratio:3/4; object-fit:cover; width:100%;}
+  .gallery figcaption{
+    padding:12px 14px; font-size:13px; font-weight:600; color:var(--paper-dim);
+    border-top:1px solid var(--line);
+  }
+
+  /* Process strip */
+  .process{
+    display:grid; grid-template-columns:repeat(5,1fr); gap:var(--space-md);
+    margin-top:var(--space-xl);
+    border-top:1px solid var(--line); padding-top:var(--space-xl);
+  }
+  .process-step{text-align:center;}
+  .process-step .num{
+    font-size:13px; font-weight:700; color:var(--teal); letter-spacing:0.08em;
+    margin-bottom:6px;
+  }
+  .process-step h3{font-size:14px; font-weight:700; margin-bottom:4px;}
+  .process-step p{font-size:13px; color:var(--paper-dim); line-height:1.45;}
+
+  /* Why us */
+  .why-grid{display:grid; grid-template-columns:1fr 1fr; gap:var(--space-xl); align-items:center;}
+  .why-list{display:flex; flex-direction:column; gap:var(--space-lg);}
+  .why-item{display:flex; gap:var(--space-md); align-items:flex-start;}
+  .why-item .mark{
+    width:8px; height:8px; border-radius:50%; background:var(--teal); margin-top:8px; flex-shrink:0;
+  }
+  .why-item h3{font-size:16px; font-weight:700; margin-bottom:4px;}
+  .why-item p{font-size:14.5px; color:var(--paper-dim);}
+  .why-photo{border-radius:6px; overflow:hidden; border:1px solid var(--line);}
+  .why-photo img{width:100%; object-fit:cover;}
+
+  /* Bulk orders band */
+  .bulk-band{
+    background:var(--teal-deep); border-radius:6px; padding:var(--space-xl);
+    display:grid; grid-template-columns:1.3fr 0.7fr; gap:var(--space-xl); align-items:center;
+  }
+  .bulk-band h2{color:var(--paper);}
+  .bulk-band p{color:rgba(244,243,239,0.85); margin-top:var(--space-sm); font-size:15px;}
+  .bulk-list{margin-top:var(--space-lg); display:flex; flex-direction:column; gap:8px; font-size:14px;}
+  .bulk-band img{border-radius:6px; width:100%; object-fit:cover; aspect-ratio:1/1.1;}
+
+  /* Contact */
+  .contact-grid{display:grid; grid-template-columns:0.9fr 1.1fr; gap:var(--space-xl);}
+  .contact-card{
+    border:1px solid var(--line); border-radius:6px; padding:var(--space-lg);
+    display:flex; flex-direction:column; gap:var(--space-md);
+  }
+  .contact-row{display:flex; gap:12px; font-size:14.5px; align-items:flex-start;}
+  .contact-row .k{color:var(--paper-dim); min-width:90px; font-weight:600; font-size:13px; text-transform:uppercase; letter-spacing:0.04em;}
+  .contact-row a{color:var(--teal);}
+  .map-wrap{border:1px solid var(--line); border-radius:6px; overflow:hidden;}
+  .map-wrap iframe{width:100%; height:100%; min-height:340px; border:0;}
+
+  footer{border-top:1px solid var(--line); padding:var(--space-xl) 0;}
+  footer .wrap{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:var(--space-md);}
+  footer p{font-size:13px; color:var(--paper-dim);}
+
+  @media (max-width: 860px){
+    .hero .wrap{grid-template-columns:1fr;}
+    h1{font-size:32px;}
+    .gallery{grid-template-columns:repeat(2,1fr);}
+    .why-grid, .contact-grid, .bulk-band{grid-template-columns:1fr;}
+    nav{display:none;}
+    .stat-row{grid-template-columns:1fr; gap:var(--space-md);}
+    .process{grid-template-columns:1fr 1fr; gap:var(--space-lg);}
+    .process-step:last-child{grid-column:1 / -1;}
+  }
+  @media (max-width: 480px){
+    .process{grid-template-columns:1fr;}
+    .process-step:last-child{grid-column:auto;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="brand" href="#top">
+      <img src="logo_new.png" alt="RK Sportswear logo">
+      <span>RK SPORTSWEAR</span>
+    </a>
+    <nav>
+      <a href="#capabilities">Capabilities</a>
+      <a href="#why">Why us</a>
+      <a href="#bulk">Bulk orders</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="btn-call" href="tel:+919066466692">Call now</a>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow">In-house stitching unit · Bengaluru</div>
+      <h1>Custom sports kits, cut and stitched to spec.</h1>
+      <p class="lede">Jerseys, uniforms and team wear manufactured in-house for schools, academies, clubs and corporates across South India. Move. Perform. Express.</p>
+      <div class="cta-row">
+        <a class="btn-primary" href="https://wa.me/919066466692?text=Hi%20RK%20Sportswear%2C%20I%27d%20like%20a%20quote%20for%20a%20bulk%20order.">Get a quote on WhatsApp</a>
+        <a class="btn-secondary" href="#capabilities">See what we make</a>
+      </div>
+      <div class="stat-row">
+        <div><div class="n">15 pcs</div><div class="l">Starting order quantity</div></div>
+        <div><div class="n">100%</div><div class="l">In-house manufacturing</div></div>
+        <div><div class="n">7–14 days</div><div class="l">Typical turnaround</div></div>
+      </div>
+    </div>
+    <div class="hero-image">
+      <img src="kit_es.jpg" alt="Custom sublimation jersey and shorts set manufactured by RK Sportswear">
+    </div>
+  </div>
+</section>
+
+<section id="capabilities">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">What we manufacture</div>
+      <h2>Built for teams that train hard.</h2>
+      <p>Every piece is cut, sublimated and stitched at our Bengaluru facility — not outsourced, not templated.</p>
+    </div>
+    <div class="gallery">
+      <figure>
+        <img src="kit_vicious.jpg" alt="Full sublimation kit">
+        <figcaption>Full sublimation kit</figcaption>
+      </figure>
+      <figure>
+        <img src="kit_kps_polo.jpg" alt="Custom polo jersey">
+        <figcaption>Polo jerseys</figcaption>
+      </figure>
+      <figure>
+        <img src="kit_07bag.jpg" alt="Full sublimation t-shirt">
+        <figcaption>Full sublimation t-shirt</figcaption>
+      </figure>
+      <figure>
+        <img src="kit_jeevitha.jpg" alt="Custom jersey with player name and number">
+        <figcaption>Name & number printing</figcaption>
+      </figure>
+      <figure>
+        <img src="kit_hoodie_v2.jpg" alt="Custom fleece hoodie">
+        <figcaption>Hoodies</figcaption>
+      </figure>
+    </div>
+
+    <div class="process">
+      <div class="process-step">
+        <div class="num">01</div>
+        <h3>Design</h3>
+        <p>Your logo, colours and numbering locked in.</p>
+      </div>
+      <div class="process-step">
+        <div class="num">02</div>
+        <h3>Cut</h3>
+        <p>Patterns cut in-house to size charts.</p>
+      </div>
+      <div class="process-step">
+        <div class="num">03</div>
+        <h3>Sublimate</h3>
+        <p>Full-colour prints that won't crack or peel.</p>
+      </div>
+      <div class="process-step">
+        <div class="num">04</div>
+        <h3>Stitch</h3>
+        <p>Reinforced seams built for field use.</p>
+      </div>
+      <div class="process-step">
+        <div class="num">05</div>
+        <h3>Dispatch</h3>
+        <p>Checked, packed and shipped on schedule.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="why">
+  <div class="wrap">
+    <div class="why-grid">
+      <div>
+        <div class="eyebrow">Why teams choose us</div>
+        <h2>We control every step, start to finish.</h2>
+        <div class="why-list" style="margin-top:24px;">
+          <div class="why-item">
+            <span class="mark"></span>
+            <div>
+              <h3>High-grade technical fabrics</h3>
+              <p>Breathable dri-fit, micro-polyester and premium cotton blends built for match and training use.</p>
+            </div>
+          </div>
+          <div class="why-item">
+            <span class="mark"></span>
+            <div>
+              <h3>Reinforced stitching</h3>
+              <p>Seams built to withstand heavy field use and repeated industrial washing.</p>
+            </div>
+          </div>
+          <div class="why-item">
+            <span class="mark"></span>
+            <div>
+              <h3>On-time bulk dispatch</h3>
+              <p>Structured production schedules so tournament and sports day deadlines are never missed.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="why-photo">
+        <img src="kit_akshu.jpg" alt="Custom school jersey manufactured by RK Sportswear">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="bulk">
+  <div class="wrap">
+    <div class="bulk-band">
+      <div>
+        <div class="eyebrow" style="color:rgba(244,243,239,0.75);">Bulk orders</div>
+        <h2>We take on college, school and club uniform orders.</h2>
+        <p>Premium quality, custom designs, affordable bulk pricing, and sizes for the whole squad.</p>
+        <div class="bulk-list">
+          <div>— Custom logo, name and number on every kit</div>
+          <div>— Minimum order quantities that make sense for teams</div>
+          <div>— One point of contact from quote to delivery</div>
+        </div>
+        <div style="margin-top:24px;">
+          <a class="btn-primary" href="https://wa.me/919066466692?text=Hi%20RK%20Sportswear%2C%20I%27d%20like%20to%20discuss%20a%20bulk%20uniform%20order.">Enquire Us</a>
+        </div>
+      </div>
+      <img src="kit_school_red.jpg" alt="School uniform kit manufactured by RK Sportswear">
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="contact">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Get in touch</div>
+      <h2>Visit the unit or reach out directly.</h2>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <div class="contact-row">
+          <span class="k">Address</span>
+          <span>1-7, RK Sportswear, Tippenahalli Main Rd, Doddabidarakull, Bengaluru, Karnataka 560073</span>
+        </div>
+        <div class="contact-row">
+          <span class="k">Phone</span>
+          <a href="tel:+919066466692">+91 90664 66692</a>
+        </div>
+        <div class="contact-row">
+          <span class="k">Email</span>
+          <a href="mailto:rksportwear1984@gmail.com">rksportwear1984@gmail.com</a>
+        </div>
+        <div class="contact-row">
+          <span class="k">Hours</span>
+          <span>Mon – Sat, 9:30 AM – 7:30 PM</span>
+        </div>
+        <a class="btn-secondary" style="text-align:center; margin-top:8px;" href="https://www.google.com/maps/place/1-7,+RK+SPORTSWEAR,+Tippenahalli+Main+Rd,+Doddabidarakull,+Bengaluru,+Karnataka+560073/data=!4m2!3m1!1s0x3bae3d0074b64ccb:0x1f30c438d3471417">Get directions</a>
+      </div>
+      <div class="map-wrap">
+        <iframe
+          loading="lazy"
+          src="https://maps.google.com/maps?q=1-7,+RK+SPORTSWEAR,+Tippenahalli+Main+Rd,+Doddabidarakull,+Bengaluru,+Karnataka+560073&output=embed">
+        </iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>© 2026 RK Sportswear. Custom sportswear manufacturer, Bengaluru.</p>
+    <p>+91 90664 66692 · rksportwear1984@gmail.com</p>
+    <p>GSTIN: 29ABNFR8792C1ZH</p>
+  </div>
+</footer>
+
+</body>
+</html>
