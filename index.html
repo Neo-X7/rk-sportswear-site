@@ -367,6 +367,20 @@
     <p>GSTIN: 29ABNFR8792C1ZH</p>
   </div>
 </footer>
-
+<script data-goatcounter="https://rksportswear.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+<script>
+document.addEventListener('click', function (e) {
+  var a = e.target.closest('a');
+  if (!a || !window.goatcounter || !window.goatcounter.count) return;
+  var href = a.getAttribute('href') || '';
+  var name = null;
+  if (href.indexOf('wa.me/919066466692') !== -1) name = 'click-whatsapp-quote';
+  else if (href.indexOf('wa.me/919900757518') !== -1) name = 'click-whatsapp-orders';
+  else if (href.indexOf('tel:') === 0) name = 'click-call';
+  else if (href.indexOf('mailto:') === 0) name = 'click-email';
+  else if (href.indexOf('google.com/maps') !== -1) name = 'click-directions';
+  if (name) window.goatcounter.count({path: name, title: name, event: true});
+});
 </body>
 </html>
